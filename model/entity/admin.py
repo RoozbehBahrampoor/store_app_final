@@ -7,7 +7,6 @@ class Admin:
         self.username = username
         self.password = password
         self.locked = locked
-        self.address = None
 
 
     def __repr__(self):

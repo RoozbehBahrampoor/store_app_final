@@ -15,7 +15,7 @@ class AdminRepository:
     def save(self, admin):
         self.connect()
         self.cursor.execute(
-            """insert into admins
+            """insert into admins 
                    (code, name, family, email, username, password, locked)
                values (?, ?, ?, ?, ?, ?, ?)""",
             [admin.code, admin.name, admin.family, admin.email, admin.username, admin.password, admin.locked])

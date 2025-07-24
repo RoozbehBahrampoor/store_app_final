@@ -19,11 +19,10 @@ class Admin:
 
     @name.setter
     def name(self, value):
-        if not re.match("^[a-zA-Z]{3,30}$", value):
-        else:
+        if re.match(r"^[a-zA-Z\s]{3,30}$", value):
             self._name = value
         else:
-        raise ValueError("Invalid name !!!")
+            raise ValueError("Invalid name !!!")
 
     def __repr__(self):
         return f"{self.__dict__}"

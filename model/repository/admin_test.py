@@ -1,6 +1,7 @@
+from controller.admin_controller import AdminController
 from model.entity.admin import Admin
 from model.repository.admin_repository import AdminRepository
-
+#
 # admin_1 = Admin(1, "parsa", "hosseini", "alihosseini123", "ali456", "alii1234", 1)
 
 # print(admin_1)
@@ -30,3 +31,6 @@ from model.repository.admin_repository import AdminRepository
 
 # Test Passed
 # print(admin_repo.find_by_username_and_password("ahmad222", "ahmad456"))
+
+admin_controller = AdminController()
+status, message = (admin_controller.save(2, "akbar", "ahmadi", "akbarahmadi45", "akbar_ah14", "alii1234", 1))

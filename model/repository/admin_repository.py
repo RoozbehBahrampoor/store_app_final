@@ -37,23 +37,28 @@ class AdminRepository:
         self.connect()
         self.cursor.execute("select * from admins")
         self.disconnect()
+        return self.cursor.fetchall()
 
     def find_by_code(self, code):
         self.connect()
         self.cursor.execute("select * from admins where code = ?", [code])
         self.disconnect()
+        return self.cursor.fetchone()
 
     def find_by_name_family(self, name, family):
         self.connect()
         self.cursor.execute("select * from admins where name like ? and family like ?", [name + "%", family + "%"])
         self.disconnect()
+        return self.cursor.fetchall()
 
     def find_by_username(self, username):
         self.connect()
         self.cursor.execute("select * from admins where username = ?", [username])
         self.disconnect()
+        return self.cursor.fetchone()
 
     def find_by_username_and_password(self, username, password):
         self.connect()
         self.cursor.execute("select * from admins where username = ? and password = ?", [username, password])
         self.disconnect()
+        return self.cursor.fetchone()

@@ -1,6 +1,4 @@
-from os import name
-from tkinter.font import names
-from typing import re
+from model.tools.validation import name_validator
 
 
 class Admin:
@@ -19,10 +17,8 @@ class Admin:
 
     @name.setter
     def name(self, value):
-        if re.match(r"^[a-zA-Z\s]{3,30}$", value):
-            self._name = value
-        else:
-            raise ValueError("Invalid name !!!")
+        name_validator(value)
+        self._name = value
 
     def __repr__(self):
         return f"{self.__dict__}"

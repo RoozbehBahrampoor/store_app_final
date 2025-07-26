@@ -22,3 +22,7 @@ class Admin:
 
     def __repr__(self):
         return f"{self.__dict__}"
+
+
+def admin():
+    return None

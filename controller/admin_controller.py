@@ -2,15 +2,17 @@ from model.entity.admin import Admin
 from model.repository.admin_repository import AdminRepository
 
 
+def save(code, name, family, email, username, password, locked):
+    try:
+        admin = Admin(code, name, family, email, username, password, locked)
+        admin_repo = AdminRepository()
+        admin_repo.save(admin)
+        return True, f"Admin saved {admin}"
+    except Exception as e:
+        return False, f"Error saving admin {e}"
+
+
 class AdminController:
-    def save(self, code, name, family, email, username, password, locked):
-        try:
-            admin = Admin(code, name, family, email, username, password, locked)
-            admin_repo = AdminRepository()
-            admin_repo.save(admin)
-            return True, f"Admin saved {admin}"
-        except Exception as e:
-            return False, f"Error saving admin {e}"
 
     def edit(self, code, name, family, email, username, password, locked):
         try:

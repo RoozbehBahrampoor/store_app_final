@@ -19,6 +19,17 @@ class Admin:
     def name(self, value):
         name_validator(value)
         self._name = value
+        
+    @property
+    def family(self):
+        return self.family
+    
+    @family.setter
+    def family(self, value):
+        family_validator(value)
+        self._family = value
+
+
 
     def __repr__(self):
         return f"{self.__dict__}"

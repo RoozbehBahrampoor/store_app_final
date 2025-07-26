@@ -4,14 +4,14 @@ from tkinter import *
 from tkinter import ttk as ttk
 from tkinter import messagebox as msg
 
-from model.entity.admin import admin
+from model.entity.admin import admin, Admin
 
 
 def adminController():
     pass
 
 
-def admin(param):
+def Admin(param):
     pass
 
 
@@ -177,11 +177,11 @@ class adminView:
         self.show_data_on_table(status, admin_list)
 
     def select_admin(self, event, admin=None):
-        admin = admin(*self.table.item(self.table.focus())["values"])
+        admin = Admin(*self.table.item(self.table.focus())["values"])
         self.code.set(admin.code)
         self.name.set(admin.name)
         self.family.set(admin.family)
-        self.email.set(admin.adminname)
-        self.username.set(admin.password)
-        self.password.set(admin.role)
+        self.email.set(admin.email)
+        self.username.set(admin.username)
+        self.password.set(admin.password)
         self.locked.set(bool(admin.locked))

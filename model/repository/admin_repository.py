@@ -2,6 +2,10 @@ import sqlite3
 
 
 class AdminRepository:
+    def __init__(self):
+        self.cursor = None
+        self.connection = None
+
     def connect(self):
         self.connection = sqlite3.connect("store.db.sqlite")
         self.cursor = self.connection.cursor()
